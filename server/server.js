@@ -14,7 +14,7 @@ app.use('/animals',AnimalRouter)
 app.use('/employee',employeeRouter)
 app.get('/',(req,res)=>{res.send('connection up ')})
 
-app.listen(process.env.PORT || 8000)
+app.listen(process.env.PORT )
 
 const passport = require("passport");
 require("./config/passport")(passport);
