@@ -6,6 +6,8 @@ const app = express()
 const cors=require('cors') 
 const passport = require("passport");
 require("./config/passport")(passport);
+const userRouter = require("./routes/user-route");
+app.use("/users", userRouter);
 const AnimalRouter=require('./routes/animals.route')
 const employeeRouter=require('./routes/employee-route')
 app.use(cors())
