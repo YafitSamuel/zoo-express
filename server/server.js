@@ -21,13 +21,5 @@ require("./config/passport")(passport);
 app.use(passport.initialize()); //Initialize the passport function on the server
 app.use("/employee", passport.authenticate("jwt", { session: false }), employeeRouter);
 
-if (process.env.NODE_ENV === "production") {
-  app.use(
-    express.static(path.join(__dirname, "../client/build", "server.html"))
-  );
-  app.get("*", (req, res) =>
-    res.sendFile(path.join(__dirname, "client/build", "server.html"))
-  );
-}
 
 
